@@ -3,6 +3,12 @@ name: "ZAP Baseline Scan"
 on:
   schedule:
     - cron:  '0 18 * * 6'
+  workflow_dispatch:
+    inputs:
+      run_scan:
+        description: 'Run the Zap scan'
+        required: true
+        default: 'true'
 
 jobs:
   zap_scan:
